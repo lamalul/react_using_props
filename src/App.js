@@ -1,36 +1,29 @@
 //import logo from './logo.svg';
 import './App.css';
-import Product from './components/Product'
+import Header from './components/Header';
+import Main from './components/Main';
+import Sidebar from './components/Sidebar';
 // import { Component } from 'react';
-import productsData from process.env.PUBLIC_URL + '/data.json'; 
-/* function App() {
-  return (
-    <div className="App">
-      <Product
-  img="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/82/6142201/1.jpg?2933"
-  name="Cyxus"
-  desc="Non-Slip Fitness Leisure Running Sneakers"
-  price="$29"
-/>
-    </div>
-  );
-} */
+
+
+//https://www.freecodecamp.org/news/how-to-use-props-in-reactjs/
+//https://chat.openai.com/share/cd4c1d38-7195-4b3f-9431-a34e39ad1c4e
+//https://www.coursera.org/learn/react-basics/lecture/Bj28Z/using-props-in-components
+
 
 function App() {
   return (
     <div className="App">
-      {productsData.map((product, index) => (
-        <Product
-          key={index}
-          img={product.img}
-          name={product.name}
-          desc={product.desc}
-          price={product.price}
-        />
-      ))}
+      <div className="App-header"> <Header name="Lama" color="red" /></div>
+
+     <div className="content-container">
+      <div className="main"> <Main productNumber="2" greeting="Huhu"/> </div>
+      <div className="sidebar"> <Sidebar greeting="Hi"/></div>
+     
+     </div>
+
     </div>
   );
 }
-
 
 export default App;
